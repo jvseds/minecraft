@@ -1,0 +1,9 @@
+.tile {
+  width: 5vw;
+  height: 2.5vh;
+  border: 0.15rem solid black;
+}
+
+.sky {
+  background-color: blue;
+}
