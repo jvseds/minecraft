@@ -1,9 +1,33 @@
+body {
+  font-size: 10px;
+}
+
+body ul {
+  list-style-type: none;
+}
+
+.inventoryList {
+  font-size: 2rem;
+}
+
 .tile {
   width: 5vw;
-  height: 2.5vh;
+  height: 4vh;
   border: 0.15rem solid black;
 }
 
 .sky {
   background-color: blue;
+}
+
+.sand {
+  background-color: #ff9e29;
+}
+
+.wood {
+  background-color: #6c3b00;
+}
+
+.leaves {
+  background-color: greenyellow;
 }
