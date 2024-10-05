@@ -7,7 +7,25 @@ body ul {
 }
 
 .inventoryList {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+section.buttons-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* design the grid */
+section.grid-container {
+  width: 90vw;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(20, 2fr);
+  grid-template-rows: repeat(20, 1fr);
 }
 
 .tile {
@@ -18,10 +36,20 @@ body ul {
 
 .sky {
   background-color: blue;
+  grid-column: 1 / span 19;
+  grid-row: 1 / span 14;
+}
+
+.grass {
+  background-color: #67d167;
+  grid-column: 1 / span 19;
+  grid-row: 15 / span 2;
 }
 
 .sand {
   background-color: #ff9e29;
+  grid-column: 1 / span 19;
+  grid-row: 17 / span 3;
 }
 
 .wood {
@@ -29,9 +57,11 @@ body ul {
 }
 
 .leaves {
-  background-color: greenyellow;
+  background-color: #075000;
 }
 
 .rock {
   background-color: #9d9d9d;
+  grid-column: 2 / span 2;
+  grid-row: 15 / span 1;
 }
