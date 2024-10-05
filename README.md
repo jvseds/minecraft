@@ -2,6 +2,7 @@
 
 A 2D basic simulation of minecraft
 
-# branch 04:
+# branch 05:
 
-Added current inventory amount to the inventoryList element.
+Added function that shows back hidden tiles when the relevant inventory is clicked.
+**issues**: right now, when clicking on the inventory, _all_ of the hidden tiles show back, instead of a single one.

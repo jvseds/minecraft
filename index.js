@@ -74,7 +74,7 @@ function removeTile(tileClass, classState, classInventory, inventoryText) {
         // hide the tile
         tile.style.visibility = "hidden";
         classInventory.amount += 1;
-        console.log(`inventory: ${classInventory.amount}`);
+        // console.log(`inventory: ${classInventory.amount}`);
         addInventoryText(inventoryText, classInventory.amount);
         classState.isClicked = false;
       } else {
@@ -90,3 +90,50 @@ removeTile(sand, sandState, sandInventory, sandText);
 removeTile(wood, woodState, woodInventory, woodText);
 removeTile(leaves, leavesState, leavesInventory, leavesText);
 removeTile(rocks, rocksState, rocksInventory, rocksText); // works
+
+// when clicking the correct inventory, show the hidden tile
+const skyInventoryState = { isClicked: false };
+const sandInventoryState = { isClicked: false };
+const woodInventoryState = { isClicked: false };
+const leavesInventoryState = { isClicked: false };
+const rocksInventoryState = { isClicked: false };
+
+// add click event listeners to the class text
+skyText.addEventListener("click", () => {
+  skyInventoryState.isClicked = true;
+});
+sandText.addEventListener("click", () => {
+  sandInventoryState.isClicked = true;
+});
+woodText.addEventListener("click", () => {
+  woodInventoryState.isClicked = true;
+});
+leavesText.addEventListener("click", () => {
+  leavesInventoryState.isClicked = true;
+});
+rocksText.addEventListener("click", () => {
+  rocksInventoryState.isClicked = true;
+});
+
+function showTile(tileClass, inventoryState, classInventory, classText) {
+  // add event listener to the inventory list item
+  tileClass.forEach((tile) => {
+    classText.addEventListener("click", () => {
+      if (inventoryState.isClicked && classInventory.amount > 0) {
+        if (tile.style.visibility === "hidden") {
+          tile.style.visibility = "visible";
+          classInventory.amount -= 1;
+          addInventoryText(classText, classInventory.amount);
+          classState.isClicked = false;
+        }
+      }
+    });
+  });
+}
+
+// invoke the function for each class
+showTile(sky, skyInventoryState, skyInventory, skyText);
+showTile(wood, woodInventoryState, woodInventory, woodText);
+showTile(sand, sandInventoryState, sandInventory, sandText);
+showTile(leaves, leavesInventoryState, leavesInventory, leavesText);
+showTile(rocks, rocksInventoryState, rocksInventory, rocksText);
