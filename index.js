@@ -51,8 +51,23 @@ rocksButton.addEventListener("click", () => {
   rocksState.isClicked = true;
 });
 
+// add text to the inventory in the html list
+inventoryList = document.getElementsByTagName("ul");
+// get the list elements
+const skyText = document.getElementById("skyText");
+const sandText = document.getElementById("sandText");
+const woodText = document.getElementById("woodText");
+const leavesText = document.getElementById("leavesText");
+const rocksText = document.getElementById("rocksText");
+
+function addInventoryText(inventoryText, inventoryAmount) {
+  // get the tileClass name from the element text
+  const text = inventoryText.id.split("T")[0];
+  inventoryText.textContent = `${text}: ${inventoryAmount}`;
+}
+
 // removeTile general (refactored) function
-function removeTile(tileClass, classState, classInventory) {
+function removeTile(tileClass, classState, classInventory, inventoryText) {
   tileClass.forEach((tile) => {
     tile.addEventListener("click", () => {
       if (classState.isClicked) {
@@ -60,6 +75,7 @@ function removeTile(tileClass, classState, classInventory) {
         tile.style.visibility = "hidden";
         classInventory.amount += 1;
         console.log(`inventory: ${classInventory.amount}`);
+        addInventoryText(inventoryText, classInventory.amount);
         classState.isClicked = false;
       } else {
         alert("Select the appropriate tool to remove this tile");
@@ -69,8 +85,8 @@ function removeTile(tileClass, classState, classInventory) {
 }
 
 // revoke the function for each tile class
-removeTile(sky, skyState, skyInventory); // works
-removeTile(sand, sandState, sandInventory);
-removeTile(wood, woodState, woodInventory);
-removeTile(leaves, leavesState, leavesInventory);
-removeTile(rocks, rocksState, rocksInventory); // works
+removeTile(sky, skyState, skyInventory, skyText); // works
+removeTile(sand, sandState, sandInventory, sandText);
+removeTile(wood, woodState, woodInventory, woodText);
+removeTile(leaves, leavesState, leavesInventory, leavesText);
+removeTile(rocks, rocksState, rocksInventory, rocksText); // works

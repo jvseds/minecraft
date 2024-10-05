@@ -2,7 +2,6 @@
 
 A 2D basic simulation of minecraft
 
-# branch 03:
+# branch 04:
 
-improved functionality by replacing the primitive data types with objects.
-still have to update elements with current inventory.
+Added current inventory amount to the inventoryList element.
