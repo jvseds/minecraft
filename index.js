@@ -1,99 +1,76 @@
 // Sky
 const sky = document.querySelectorAll(".sky");
 const skyButton = document.getElementsByClassName("removeSky")[0];
-let skyInventory = 0;
+// let skyInventory = 0;
 
 // Sand
 const sand = document.querySelectorAll(".sand");
 const sandButton = document.getElementsByClassName("removeSand")[0];
-let sandInventory = 0;
+// let sandInventory = 0;
 
 // Wood
 const wood = document.querySelectorAll(".wood");
 const woodButton = document.getElementsByClassName("removeWood")[0];
-let woodInventory = 0;
+// let woodInventory = 0;
 
 // Leaves
 const leaves = document.querySelectorAll(".leaves");
 const leavesButton = document.getElementsByClassName("removeLeaves")[0];
-let leavesInventory = 0;
+// let leavesInventory = 0;
 
-// flags for following clicking events
-let isSkyClicked = false;
-let isSandClicked = false;
-let isWoodClicked = false;
-let isLeavesClicked = false;
+const rocks = document.querySelectorAll(".rock");
+const rocksButton = document.getElementsByClassName("removeRocks")[0];
 
-// add event listeners for the removing (tools) buttons
+// clickes state
+const skyState = { isClicked: false };
+const sandState = { isClicked: false };
+const woodState = { isClicked: false };
+const leavesState = { isClicked: false };
+const rocksState = { isClicked: false };
+// inventories
+const skyInventory = { amount: 0 };
+const sandInventory = { amount: 0 };
+const woodInventory = { amount: 0 };
+const leavesInventory = { amount: 0 };
+const rocksInventory = { amount: 0 };
+
+// create event listeners
 skyButton.addEventListener("click", () => {
-  isSkyClicked = true;
+  skyState.isClicked = true;
 });
-
 sandButton.addEventListener("click", () => {
-  isSandClicked = true;
+  sandState.isClicked = true;
 });
-
 woodButton.addEventListener("click", () => {
-  isWoodClicked = true;
+  woodState.isClicked = true;
 });
-
 leavesButton.addEventListener("click", () => {
-  isLeavesClicked = true;
+  leavesState.isClicked = true;
+});
+rocksButton.addEventListener("click", () => {
+  rocksState.isClicked = true;
 });
 
-// add event listeners for the tiles
-sky.forEach((tile) => {
-  tile.addEventListener("click", () => {
-    if (isSkyClicked) {
-      tile.remove();
-      skyInventory += 1;
-      console.log(`sky inventory: ${skyInventory}`);
-      //   set flag to "false"
-      isSkyClicked = !isSkyClicked;
-    } else {
-      alert("select the correct tool");
-    }
+// removeTile general (refactored) function
+function removeTile(tileClass, classState, classInventory) {
+  tileClass.forEach((tile) => {
+    tile.addEventListener("click", () => {
+      if (classState.isClicked) {
+        // hide the tile
+        tile.style.visibility = "hidden";
+        classInventory.amount += 1;
+        console.log(`inventory: ${classInventory.amount}`);
+        classState.isClicked = false;
+      } else {
+        alert("Select the appropriate tool to remove this tile");
+      }
+    });
   });
-});
+}
 
-sand.forEach((tile) => {
-  tile.addEventListener("click", () => {
-    if (isSandClicked) {
-      tile.remove();
-      sandInventory += 1;
-      console.log(`sand inventory: ${sandInventory}`);
-      //   set flag to "false"
-      isSandClicked = !isSandClicked;
-    } else {
-      alert("select the correct tool");
-    }
-  });
-});
-
-wood.forEach((tile) => {
-  tile.addEventListener("click", () => {
-    if (isWoodClicked) {
-      tile.remove();
-      woodInventory += 1;
-      console.log(`wood inventory: ${woodInventory}`);
-      //   set flag to "false"
-      isWoodClicked = !isWoodClicked;
-    } else {
-      alert("select the correct tool");
-    }
-  });
-});
-
-leaves.forEach((tile) => {
-  tile.addEventListener("click", () => {
-    if (isLeavesClicked) {
-      tile.remove();
-      leavesInventory += 1;
-      console.log(`leaves inventory: ${leavesInventory}`);
-      //   set flag to "false"
-      isLeavesClicked = !isLeavesClicked;
-    } else {
-      alert("select the correct tool");
-    }
-  });
-});
+// revoke the function for each tile class
+removeTile(sky, skyState, skyInventory); // works
+removeTile(sand, sandState, sandInventory);
+removeTile(wood, woodState, woodInventory);
+removeTile(leaves, leavesState, leavesInventory);
+removeTile(rocks, rocksState, rocksInventory); // works
