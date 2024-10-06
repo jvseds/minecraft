@@ -24,8 +24,9 @@ section.grid-container {
   width: 90vw;
   height: 70vh;
   display: grid;
-  grid-template-columns: repeat(20, 2fr);
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 0px;
 }
 
 .tile {
@@ -35,33 +36,38 @@ section.grid-container {
 }
 
 .sky {
-  background-color: blue;
+  background-color: #5aaaff;
   grid-column: 1 / span 19;
   grid-row: 1 / span 14;
 }
 
 .grass {
-  background-color: #67d167;
+  /* background-color: #67d167; */
+  background-image: url(./images/grass.webp);
   grid-column: 1 / span 19;
   grid-row: 15 / span 2;
 }
 
 .sand {
-  background-color: #ff9e29;
+  /* background-color: #ff9e29; */
+  background-image: url(./images/sand.webp);
   grid-column: 1 / span 19;
   grid-row: 17 / span 3;
 }
 
 .wood {
-  background-color: #6c3b00;
+  /* background-color: #6c3b00; */
+  background-image: url(./images/wood.webp);
 }
 
 .leaves {
-  background-color: #075000;
+  /* background-color: #075000; */
+  background-image: url(./images/leaves.webp);
 }
 
 .rock {
-  background-color: #9d9d9d;
+  /* background-color: #9d9d9d; */
+  background-image: url(./images/rock.webp);
   grid-column: 2 / span 2;
   grid-row: 15 / span 1;
 }
