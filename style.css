@@ -1,6 +1,6 @@
 body {
   font-size: 10px;
-  font-family: sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 body ul {
@@ -19,6 +19,19 @@ img {
   justify-content: space-around;
   background-color: #9fa9a6;
   padding: 1%;
+  font-weight: bold;
+}
+
+.inventoryList li {
+  padding: 0.5%;
+}
+
+.inventoryList li:hover {
+  cursor: pointer;
+  text-shadow: 2px 2px #9fa9a6;
+  background-color: #737877;
+  /* padding: 0.5%; */
+  border-radius: 1rem;
 }
 
 section.buttons-menu {
@@ -34,20 +47,25 @@ section.buttons-menu {
   text-decoration: none;
   font-size: 1.2rem;
   color: #f0f0f0;
+  text-align: center;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .btn:hover {
   background-color: #000094;
+  cursor: pointer;
 }
 
 main {
   display: flex;
-  justify-content: center;
+  justify-items: center;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 /* design the grid */
 section.grid-container {
-  min-width: 90vw;
+  min-width: 100vw;
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
