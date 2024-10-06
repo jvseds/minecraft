@@ -19,19 +19,22 @@ section.buttons-menu {
   justify-content: space-around;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 /* design the grid */
 section.grid-container {
-  width: 100vw;
+  min-width: 90vw;
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(15, 1fr);
+  grid-template-rows: repeat(11, 1fr);
   gap: 0px;
 }
 
 .tile {
-  /* width: 5vw;
-  height: 4vh; */
   border: 0.15rem solid black;
 }
 
@@ -42,10 +45,7 @@ section.grid-container {
 }
 
 .grass {
-  /* background-color: #67d167; */
   background-image: url(./images/grass.webp);
-  /* grid-column: 1 / span 19; */
-  /* grid-row: 15 / span 1; */
 }
 
 .g1,
@@ -78,10 +78,7 @@ section.grid-container {
 }
 
 .sand {
-  /* background-color: #ff9e29; */
   background-image: url(./images/sand.webp);
-  /* grid-column: 1 / span 19; */
-  /* grid-row: 16 / span 4; */
 }
 
 .s1,
@@ -133,7 +130,6 @@ section.grid-container {
 }
 
 .wood {
-  /* background-color: #6c3b00; */
   background-image: url(./images/wood.webp);
 }
 
@@ -154,7 +150,6 @@ section.grid-container {
 }
 
 .leaves {
-  /* background-color: #075000; */
   background-image: url(./images/leaves.webp);
 }
 
@@ -179,7 +174,6 @@ section.grid-container {
 }
 
 .rock {
-  /* background-color: #9d9d9d; */
   background-image: url(./images/rock.webp);
   grid-column: 3 / span 1;
   grid-row: 10 / span 1;
