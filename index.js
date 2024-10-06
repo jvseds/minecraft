@@ -22,22 +22,22 @@ const rocks = document.querySelectorAll(".rock");
 const rocksButton = document.getElementsByClassName("removeRocks")[0];
 
 // clickes state
-const skyState = { isClicked: false };
+// const skyState = { isClicked: false };
 const sandState = { isClicked: false };
 const woodState = { isClicked: false };
 const leavesState = { isClicked: false };
 const rocksState = { isClicked: false };
 // inventories
-const skyInventory = { amount: 0 };
+// const skyInventory = { amount: 0 };
 const sandInventory = { amount: 0 };
 const woodInventory = { amount: 0 };
 const leavesInventory = { amount: 0 };
 const rocksInventory = { amount: 0 };
 
 // create event listeners
-skyButton.addEventListener("click", () => {
-  skyState.isClicked = true;
-});
+// skyButton.addEventListener("click", () => {
+//   skyState.isClicked = true;
+// });
 sandButton.addEventListener("click", () => {
   sandState.isClicked = true;
 });
@@ -54,7 +54,7 @@ rocksButton.addEventListener("click", () => {
 // add text to the inventory in the html list
 inventoryList = document.getElementsByTagName("ul");
 // get the list elements
-const skyText = document.getElementById("skyText");
+// const skyText = document.getElementById("skyText");
 const sandText = document.getElementById("sandText");
 const woodText = document.getElementById("woodText");
 const leavesText = document.getElementById("leavesText");
@@ -85,23 +85,23 @@ function removeTile(tileClass, classState, classInventory, inventoryText) {
 }
 
 // revoke the function for each tile class
-removeTile(sky, skyState, skyInventory, skyText); // works
+// removeTile(sky, skyState, skyInventory, skyText);
 removeTile(sand, sandState, sandInventory, sandText);
 removeTile(wood, woodState, woodInventory, woodText);
 removeTile(leaves, leavesState, leavesInventory, leavesText);
-removeTile(rocks, rocksState, rocksInventory, rocksText); // works
+removeTile(rocks, rocksState, rocksInventory, rocksText);
 
 // when clicking the correct inventory, show the hidden tile
-const skyInventoryState = { isClicked: false };
+// const skyInventoryState = { isClicked: false };
 const sandInventoryState = { isClicked: false };
 const woodInventoryState = { isClicked: false };
 const leavesInventoryState = { isClicked: false };
 const rocksInventoryState = { isClicked: false };
 
 // add click event listeners to the class text
-skyText.addEventListener("click", () => {
-  skyInventoryState.isClicked = true;
-});
+// skyText.addEventListener("click", () => {
+//   skyInventoryState.isClicked = true;
+// });
 sandText.addEventListener("click", () => {
   sandInventoryState.isClicked = true;
 });
@@ -132,7 +132,7 @@ function showTile(tileClass, inventoryState, classInventory, classText) {
 }
 
 // invoke the function for each class
-showTile(sky, skyInventoryState, skyInventory, skyText);
+// showTile(sky, skyInventoryState, skyInventory, skyText);
 showTile(wood, woodInventoryState, woodInventory, woodText);
 showTile(sand, sandInventoryState, sandInventory, sandText);
 showTile(leaves, leavesInventoryState, leavesInventory, leavesText);
