@@ -1,5 +1,6 @@
 body {
   font-size: 10px;
+  font-family: sans-serif;
 }
 
 body ul {
@@ -11,12 +12,27 @@ body ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: #9fa9a6;
+  padding: 1%;
 }
 
 section.buttons-menu {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.btn {
+  background-color: #4747a9;
+  padding: 1%;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
+.btn:hover {
+  background-color: #000094;
 }
 
 main {
