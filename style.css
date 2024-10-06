@@ -1,0 +1,219 @@
+body {
+  font-size: 10px;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+body ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 25%;
+  max-height: 25%;
+}
+
+.inventoryList {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #9fa9a6;
+  padding: 1%;
+  font-weight: bold;
+}
+
+.inventoryList li {
+  padding: 0.5%;
+}
+
+.inventoryList li:hover {
+  cursor: pointer;
+  text-shadow: 2px 2px #9fa9a6;
+  background-color: #737877;
+  /* padding: 0.5%; */
+  border-radius: 1rem;
+}
+
+section.buttons-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: #4747a9;
+  padding: 1%;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  text-align: center;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.btn:hover {
+  background-color: #000094;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-items: center;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/* design the grid */
+section.grid-container {
+  min-width: 100vw;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  gap: 0px;
+}
+
+.tile {
+  border: 0.15rem solid black;
+}
+
+.sky {
+  background-color: #5aaaff;
+  grid-column: 1 / span 10;
+  grid-row: 1 / span 9;
+}
+
+.grass {
+  background-image: url(./images/grass.webp);
+}
+
+.g1,
+.g2,
+.g3,
+.g4,
+.g5,
+.g6,
+.g7,
+.g8,
+.g9,
+.g10 {
+  grid-row: 10 / span 1;
+}
+
+.g1 {
+  grid-column: 1 / span 2;
+}
+.g2 {
+  grid-column: 3 / span 2;
+}
+.g3 {
+  grid-column: 5 / span 2;
+}
+.g4 {
+  grid-column: 7 / span 2;
+}
+.g5 {
+  grid-column: 9 / span 2;
+}
+
+.sand {
+  background-image: url(./images/sand.webp);
+}
+
+.s1,
+.s2,
+.s3,
+.s4,
+.s5 {
+  grid-row: 11 / span 1;
+}
+
+.s1 {
+  grid-column: 1 / span 2;
+}
+.s2 {
+  grid-column: 3 / span 2;
+}
+.s3 {
+  grid-column: 5 / span 2;
+}
+.s4 {
+  grid-column: 7 / span 2;
+}
+.s5 {
+  grid-column: 9 / span 2;
+}
+
+.s6,
+.s7,
+.s8,
+.s9,
+.s10 {
+  grid-row: 12 / span 1;
+}
+
+.s6 {
+  grid-column: 1 / span 2;
+}
+.s7 {
+  grid-column: 3 / span 2;
+}
+.s8 {
+  grid-column: 5 / span 2;
+}
+.s9 {
+  grid-column: 7 / span 2;
+}
+.s10 {
+  grid-column: 9 / span 2;
+}
+
+.wood {
+  background-image: url(./images/wood.webp);
+}
+
+.w1,
+.w2,
+.w3 {
+  grid-column: 7 / span 1;
+}
+
+.w1 {
+  grid-row: 9 / span 1;
+}
+.w2 {
+  grid-row: 8 / span 1;
+}
+.w3 {
+  grid-row: 7 / span 1;
+}
+
+.leaves {
+  background-image: url(./images/leaves.webp);
+}
+
+.l1,
+.l2,
+.l3 {
+  grid-row: 5 / span 2;
+}
+
+.l1 {
+  grid-column: 6 / span 1;
+}
+.l2 {
+  grid-column: 7 / span 1;
+}
+.l3 {
+  grid-column: 8 / span 1;
+}
+.l4 {
+  grid-row: 3 / span 2;
+  grid-column: 7 / span 1;
+}
+
+.rock {
+  background-image: url(./images/rock.webp);
+  grid-column: 3 / span 1;
+  grid-row: 10 / span 1;
+}
