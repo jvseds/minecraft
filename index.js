@@ -121,3 +121,5 @@ showTile(wood, woodInventoryState, woodInventory, woodText);
 showTile(sand, sandInventoryState, sandInventory, sandText);
 showTile(leaves, leavesInventoryState, leavesInventory, leavesText);
 showTile(rocks, rocksInventoryState, rocksInventory, rocksText);
+
+// change tools buttons pointer when clicked
